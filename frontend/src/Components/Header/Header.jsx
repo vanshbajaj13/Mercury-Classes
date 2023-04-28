@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 
 const Header = () => {
@@ -16,10 +16,22 @@ const Header = () => {
     oldScrollY = window.scrollY;
   });
 
+  useEffect(() => {
+    const hg = document.getElementById("HG");
+    hg.addEventListener("mouseover", () => {
+      hg.classList.add("rubber");
+      setTimeout(() => {
+        hg.classList.remove("rubber");
+      }, 1000);
+    });
+  }, []);
+
   return (
     <div>
       <header className={navBarToggle}>
-        <h1 className="HG">HG</h1>
+        <h1 className="HG" id="HG">
+          HG
+        </h1>
         <h1 className="HG teel">.</h1>
         <ul>
           <li>
