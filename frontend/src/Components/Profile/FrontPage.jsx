@@ -6,7 +6,7 @@ const heading2 = "Classes";
 const TextArray = [Array.from(heading1),Array.from(heading2)];
 const FrontPage = () => {
   return (
-    <div>
+    <section>
       <div className="frontPage">
         <img src="./Images/Profile.jpg" alt="profile" className="profile"></img>
         <div className="textContainer">
@@ -26,7 +26,7 @@ const FrontPage = () => {
         </h1>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

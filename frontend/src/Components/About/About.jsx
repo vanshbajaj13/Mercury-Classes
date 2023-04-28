@@ -1,11 +1,48 @@
-import React from 'react'
+import React from "react";
+import gsap from "gsap";
+import { useLayoutEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+        gsap.utils.toArray(".comparisonSection").forEach(section => {
+            let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "center center",
+                // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
+                        end: () => "+=" + section.offsetWidth, 
+                        scrub: true,
+                        pin: true,
+                anticipatePin: false
+                    },
+                    defaults: {ease: "none"}
+                });
+            // animate the container one way...
+            tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
+              // ...and the image the opposite way (at the same time)
+              .fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0);
+        });
+    })
+    return () => {
+      ctx.revert();
+    };
+  }, []);
   return (
-    <div>
-        <img src='./Images/study.jpg' width={"100%"} alt="study"></img>
+    <div className="aboutPage">
+    <section class="comparisonSection">
+      <div class="comparisonImage beforeImage">
+        <img src="./Images/study.jpg" alt="before">
+        </img>
+      </div>
+      <div class="comparisonImage afterImage">
+        <img src="./Images/study.jpg" alt="after"></img>
+      </div>
+    </section>
     </div>
-  )
-}
+  );
+};
 
-export default About    
+export default About;
