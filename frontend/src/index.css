@@ -99,7 +99,7 @@ li:hover {
 
 .bg-image {
   /* The image used */
-  background: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80);
+  background: url("../public/Images/bg.jpg");
 
   /* Add the blur effect */
   filter: blur(2px);
@@ -147,12 +147,24 @@ li:hover {
   cursor: pointer;
   display: inline-block;
   text-transform: uppercase;
+  animation: fakeAnimation linear 1s;
+  /* animation-iteration-count: infinite; */
   text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
     1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191,
     1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191,
     1px 10px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4),
     1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
     1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+@keyframes fakeAnimation {
+  0%{
+    color: white;
+  }
+  100%{
+    color: white;
+  }
+  
 }
 
 .headingChar:hover {
@@ -266,14 +278,12 @@ li:hover {
   height: fit-content;
   text-align: center;
   -webkit-background-clip: text;
-	background-clip: text;
-	background-image: url("../public/Images/bg.jpg");
-	color: transparent;
+  background-clip: text;
+  background-image: url("../public/Images/bg.jpg");
+  color: transparent;
 
   /* border: 3px solid blue; */
 }
-
-
 
 .rankerHeading h1 {
   font-family: "Braah One", sans-serif;
@@ -285,6 +295,7 @@ li:hover {
 .rankersDiv {
   width: 100%;
   height: fit-content;
+  margin-top: 15vw;
   /* border: 3px solid green; */
   background-color: var(--teel);
   display: flex;
@@ -322,7 +333,11 @@ li:hover {
   background: white;
   border-radius: 100%;
   position: relative;
-  top: -50%;
+  -webkit-transform: translate(0%, -45%);
+  -moz-transform: translate(0%, -45%);
+  -ms-transform: translate(0%, -45%);
+  -o-transform: translate(0%, -45%);
+  transform: translate(0%, -45%);
   transition: all;
   transition-duration: 1000ms;
   transition-timing-function: ease;
@@ -339,14 +354,14 @@ li:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: -35%;
+  margin-top: -15%;
   margin-bottom: 20px;
   color: white;
 }
 
 .scoreDiv h2 {
   font-size: 2rem;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
 }
 
 /* contact me */
@@ -429,7 +444,7 @@ a {
     aspect-ratio: 1/1.5;
   }
 
-  .rankerPage{
+  .rankerPage {
     height: 80%;
   }
 
@@ -461,7 +476,7 @@ a {
       1px 30px 60px rgba(78, 78, 78, 0.4);
   }
 
-  .rankerPage{
+  .rankerPage {
     height: 60%;
   }
   .ranker {
@@ -478,7 +493,7 @@ a {
 }
 
 @media screen and (max-width: 420px) {
-  .rankerPage{
+  .rankerPage {
     height: 50%;
   }
   header {

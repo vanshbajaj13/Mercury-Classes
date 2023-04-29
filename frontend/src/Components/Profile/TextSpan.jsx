@@ -4,10 +4,6 @@ const TextSpan = (props) => {
   useEffect(() => {
     const sp = document.getElementsByClassName("headingChar");
     for (let i = 0; i < sp.length; i++) {
-        sp[i].classList.add("rubber");
-        setTimeout(() => {
-          sp[i].classList.remove("rubber");
-        }, 1000);
       sp[i].addEventListener("mouseover", () => {
         sp[i].classList.add("rubber");
         setTimeout(() => {

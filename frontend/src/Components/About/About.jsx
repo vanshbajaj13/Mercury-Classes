@@ -45,11 +45,11 @@ const About = () => {
           <h1>Paint a bright future with education</h1>
           <p>~ Er Himanshu Girdhar</p>
       </div>
-      <section class="comparisonSection">
-        <div class="comparisonImage beforeImage">
+      <section className="comparisonSection">
+        <div className="comparisonImage beforeImage">
           <img src="./Images/study.jpg" alt="before"></img>
         </div>
-        <div class="comparisonImage afterImage">
+        <div className="comparisonImage afterImage">
           <img src="./Images/study.jpg" alt="after"></img>
         </div>
       </section>
