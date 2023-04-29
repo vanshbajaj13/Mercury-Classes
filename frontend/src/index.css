@@ -3,6 +3,7 @@
   margin: 0%;
   --teel: teal;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -154,6 +155,10 @@ li:hover {
     1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
+.headingChar:hover {
+  color: var(--teel);
+}
+
 .rubber {
   animation: rubberBand linear 1s;
 }
@@ -194,8 +199,15 @@ li:hover {
 
 /* about */
 
-section {
-  height: 100vh;
+.aboutPage .aboutText {
+  color: white;
+  font-family: "Braah One", sans-serif;
+  position: sticky;
+  text-align: center;
+  top: 50vh;
+  z-index: 10;
+  /* background-color: rgb(0, 0, 0);  */
+  /* background-color: rgba(0, 0, 0, 0.1);  */
 }
 
 .comparisonSection {
@@ -245,22 +257,29 @@ section {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .rankerHeading {
   width: 100%;
-  height: 40%;
+  height: fit-content;
   text-align: center;
+  -webkit-background-clip: text;
+	background-clip: text;
+	background-image: url("../public/Images/bg.jpg");
+	color: transparent;
+
   /* border: 3px solid blue; */
 }
 
+
+
 .rankerHeading h1 {
-  font-size: 9vh;
+  font-family: "Braah One", sans-serif;
+  font-size: 10vw;
   font-weight: 900;
-  /* margin-top: 5%; */
-  color: var(--teel);
+  text-transform: uppercase;
 }
 
 .rankersDiv {
@@ -273,23 +292,22 @@ section {
   align-items: flex-start;
 }
 
-.ranker{
+.ranker {
   background: var(--teel);
   width: 30%;
   height: 80%;
   /* border: 3px solid green; */
 }
-.ranker .infoDiv{
+.ranker .infoDiv {
   /* border: 3px solid yellow; */
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
 }
 
-
-.ranker .imgDiv{
+.ranker .imgDiv {
   /* background: orange; */
   display: flex;
   justify-content: space-evenly;
@@ -297,7 +315,7 @@ section {
   width: 80%;
   border-radius: 100%;
 }
-.ranker  img{
+.ranker img {
   width: 100%;
   aspect-ratio: 1/1;
   border: 10px solid white;
@@ -310,11 +328,11 @@ section {
   transition-timing-function: ease;
 }
 
-.ranker img:hover{
-  scale: 1.2;
+.ranker img:hover {
+  scale: 1.1;
 }
 
-.ranker .scoreDiv{
+.ranker .scoreDiv {
   /* border: 2px solid blue; */
   display: flex;
   flex-direction: column;
@@ -324,16 +342,69 @@ section {
   margin-top: -35%;
   margin-bottom: 20px;
   color: white;
-
 }
 
-
-.scoreDiv h2{
+.scoreDiv h2 {
   font-size: 2rem;
   margin-bottom: 5vh;
 }
 
+/* contact me */
+.contactPage {
+  /* border-top: 3px solid var(--teel); */
+  display: flex;
+  width: 100%;
+  min-height: 50vh;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.contactPage a {
+  border: 3px solid white;
+  background-color: var(--teel);
+  color: white;
+  font-weight: 900;
+  width: 28%;
+  aspect-ratio: 4/1;
+  padding: 10px;
+  transition: all 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contactPage a:hover {
+  scale: 1.02;
+  box-shadow: 0 1px 13px 0 var(--teel);
+}
+.contactContainer div {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contactPage button {
+  color: white;
+  background: transparent;
+  border: 0px;
+  font-weight: 900;
+  font-size: larger;
+}
+
 /* universal */
+
+section {
+  height: 100vh;
+}
 
 a {
   background-color: inherit;
@@ -356,6 +427,10 @@ a {
   .profile {
     width: 50%;
     aspect-ratio: 1/1.5;
+  }
+
+  .rankerPage{
+    height: 80%;
   }
 
   .contactContainer {
@@ -386,22 +461,26 @@ a {
       1px 30px 60px rgba(78, 78, 78, 0.4);
   }
 
-
-  .ranker{
+  .rankerPage{
+    height: 60%;
+  }
+  .ranker {
     width: 33.3%;
   }
 
-  .ranker img{
+  .ranker img {
     border: 5px solid white;
   }
 
-  .scoreDiv h2{
+  .scoreDiv h2 {
     font-size: 1rem;
   }
-
 }
 
 @media screen and (max-width: 420px) {
+  .rankerPage{
+    height: 50%;
+  }
   header {
     width: 99%;
     left: 0%;

@@ -3,7 +3,7 @@ import Ranker from "./Ranker";
 
 const TopRankerPage = () => {
   return (
-    <section>
+    <section >
       <div className="rankerPage">
         <div className="rankerHeading">
           <h1>Our Top Rankers</h1>

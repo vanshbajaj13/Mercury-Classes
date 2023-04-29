@@ -1,4 +1,5 @@
 import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
 import Header from "./Components/Header/Header";
 import FrontPage from "./Components/Profile/FrontPage";
 import TopRankerPage from "./Components/TopRanker/TopRankerPage";
@@ -12,7 +13,8 @@ function App() {
         <About></About>
         <Partioner></Partioner>
         <TopRankerPage></TopRankerPage>
-        <section></section>
+        <Contact></Contact>
+        {/* <section></section> */}
     </div>
   );
 }
