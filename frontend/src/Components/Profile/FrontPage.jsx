@@ -8,26 +8,35 @@ const FrontPage = () => {
 
   useEffect(() => {
     const chars = document.getElementsByClassName("headingChar");
-    console.log(chars);
-    for (let i = 0; i < chars.length; i++) {
-      chars[i].addEventListener("animationend",()=>{
-        selectRandom();
-      })
-    }
-    
-    function selectRandom() {
+    // console.log(chars);
+    setInterval(()=>{
       var it = Math.floor(Math.random()*(chars.length));
-      console.log(it);
-      chars[it].style.animationName = "rubberBand";
+      chars[it].classList.add("rubber");
+      // console.log(it);
       setTimeout(() => {
-        chars[it].style.animationName = "";
-        }, 1000);
-    }
+        chars[it].classList.remove("rubber");
+        // console.log("done");
+      }, 1000);
+    },1500)
+    // for (let i = 0; i < chars.length; i++) {
+    //   chars[i].addEventListener("animationend",()=>{
+    //     selectRandom();
+    //   })
+    // }
+    
+    // function selectRandom() {
+      // var it = Math.floor(Math.random()*(chars.length));
+    //   console.log(it);
+    //   chars[it].style.animationName = "rubberBand";
+    //   setTimeout(() => {
+    //     chars[it].style.animationName = "";
+    //     }, 1000);
+    // }
 
   }, [])
   
   return (
-    <section>
+    <>
       <div className="frontPage">
         <div className="imageDiv">
           <div className="bg-image"></div>
@@ -49,7 +58,7 @@ const FrontPage = () => {
           </h1>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
