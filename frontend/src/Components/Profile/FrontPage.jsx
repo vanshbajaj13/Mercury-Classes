@@ -18,23 +18,13 @@ const FrontPage = () => {
         // console.log("done");
       }, 1000);
     },1500)
-    // for (let i = 0; i < chars.length; i++) {
-    //   chars[i].addEventListener("animationend",()=>{
-    //     selectRandom();
-    //   })
-    // }
-    
-    // function selectRandom() {
-      // var it = Math.floor(Math.random()*(chars.length));
-    //   console.log(it);
-    //   chars[it].style.animationName = "rubberBand";
-    //   setTimeout(() => {
-    //     chars[it].style.animationName = "";
-    //     }, 1000);
-    // }
 
   }, [])
   
+  window.addEventListener("load",()=>{
+    document.getElementById("loader").style.visibility = "hidden";
+  })
+
   return (
     <>
       <div className="frontPage">
