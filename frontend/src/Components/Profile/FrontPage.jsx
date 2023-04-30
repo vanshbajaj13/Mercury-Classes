@@ -8,22 +8,16 @@ const FrontPage = () => {
 
   useEffect(() => {
     const chars = document.getElementsByClassName("headingChar");
-    // console.log(chars);
     setInterval(()=>{
       var it = Math.floor(Math.random()*(chars.length));
       chars[it].classList.add("rubber");
-      // console.log(it);
       setTimeout(() => {
         chars[it].classList.remove("rubber");
-        // console.log("done");
       }, 1000);
     },1500)
 
   }, [])
   
-  window.addEventListener("load",()=>{
-    document.getElementById("loader").style.visibility = "hidden";
-  })
 
   return (
     <>

@@ -47,10 +47,10 @@ const About = () => {
       </div>
       <section className="comparisonSection">
         <div className="comparisonImage beforeImage">
-          <img src="./Images/study.jpg" alt="before"></img>
+          <img src="./Images/study.jpg" alt="before" loading="lazy"></img>
         </div>
-        <div className="comparisonImage afterImage">
-          <img src="./Images/study.jpg" alt="after"></img>
+        <div className="comparisonImage afterImage" >
+          <img src="./Images/study.jpg" alt="after" loading="lazy"></img>
         </div>
       </section>
     </div>

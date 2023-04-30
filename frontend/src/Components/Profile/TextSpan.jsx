@@ -5,7 +5,6 @@ const TextSpan = (props) => {
     const sp = document.getElementsByClassName("headingChar");
     for (let i = 0; i < sp.length; i++) {
       sp[i].addEventListener("mouseover", () => {
-        // console.log("mouser on");
         sp[i].classList.add("rubber");
         setTimeout(() => {
           sp[i].classList.remove("rubber");
